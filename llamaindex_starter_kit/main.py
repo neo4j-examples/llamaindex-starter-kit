@@ -2,6 +2,9 @@ from __future__ import annotations
 from typing import Union
 from fastapi import FastAPI
 from .models import ApiChatPostRequest, ApiChatPostResponse
+from .vector_index import get_vector_response
+from .agent import get_agent_response
+from .kg_rag import get_kg_response
 
 app = FastAPI(
     title='Chat API',
@@ -21,7 +24,15 @@ def send_chat_message(body: ApiChatPostRequest) -> Union[None, ApiChatPostRespon
     Send a chat message
     """
 
-    # Echo placeholder
+    mode = body.mode.lower()
+    if mode == "vector":
+        print(f'Running vector index')
+        response = get_vector_response(body.message)
+    elif mode == "kg":
+        print(f'Running KG Rag Retreiver')
+        response = get_kg_response(body.message)
+    else:
+        print(f'Running agent')
+        response = get_agent_response(body.message)
 
-    # TODO: Replace to call with underlying LLM using target framework
-    return ApiChatPostResponse(message=body.message)
+    return ApiChatPostResponse(message=response)
