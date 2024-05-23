@@ -33,7 +33,7 @@ pip install -r requirements.txt
 
 3. Set up your Neo4j credentials:
 
-Create a `credentials.json` file in the project directory with the following structure:
+Update the `credentials.json` file in the directory:
 
 ```json
 {
