@@ -124,6 +124,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Acknowledgements
 
 This starter kit is built using the [llama-index](https://github.com/jerryjliu/llama_index) library by Jerry Liu and the [Neo4j](https://neo4j.com/) graph database.
-```
-
-The main change in this version is the updated "Usage" section for the FastAPI application. It now includes the Poetry commands for running the application and provides instructions on how to change the port if needed.
