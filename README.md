@@ -33,17 +33,16 @@ pip install -r requirements.txt
 
 3. Set up your Neo4j credentials:
 
-Update the `credentials.json` file in the directory:
+Update your Neo4j credentials in the `credentials.json` file in the project directory. If you already have a graphdatabase set up you will update with your current Neo4j DB Credentials and OpenAI api key. If you are looking to test out a sample dataset, the following Neo4j credentials allow for read-only access to a hosted sample dataset. Your own OpenAI key will be needed to run this server.
 
 ```json
-{
-  "neo4j": "your_neo4j_username",
-  "password": "your_neo4j_password",
-  "url": "your_neo4j_url",
-  "database": "your_neo4j_database",
-  "openai_api_key": "your_openai_api_key"
-}
+NEO4J_URI=neo4j+ssc://9fcf58c6.databases.neo4j.io 
+NEO4J_DATABASE=neo4j 
+NEO4J_USERNAME=public 
+NEO4J_PASSWORD=read_only 
+OPENAI_API_KEY=<add_your_openai_key_here>
 ```
+NOTE: the `NEO4J_URI` value can use either the neo4j or [bolt](https://neo4j.com/docs/bolt/current/bolt/) uri scheme. For more details on which to use, see this example.
 
 ## Usage
 
